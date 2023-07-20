@@ -13,12 +13,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
+						<span class="avatar"><img src="{{img}}" alt="" /></span>
 
-            <h1>Description</h1>
+            <h1>{{ub}}</h1>
             <br>
             <!-- About me button -->
-            <a href="#"><button style="color:white;width:40%" >More about me</button></a>
+            <a href="/about"><button style="color:white;width:40%" >More about me</button></a>
             <!--  -->
             <br> <br>
 						<ul class="icons">
@@ -35,24 +35,29 @@
 
 						<!-- Thumbnails -->
 							<section class="thumbnails">
+
+                 {% for i in pos %}
+               			 <div>
+
+                     			 <a href="">
+                        	<img src="{{i}}" alt="" >
+                       	 <h3>{{pos[i]}}</h3>
+                      		</a>
+                  		</div>  
+                 {% endfor %}
                 
-                <div>
-                      <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                
-                      <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
-                        <h3>Caption... blah blah blah</h3>
+<!--                       <a href="">
+                        <img src="{{url_for('static',filename='images/thumbs/02.jpg')}}" alt="" />
+                        <h3>Caption... blah </h3>
                       </a>
                 </div>    
                 <div>
                   <a href="">
                         <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                </div>  
+                        <h3>Caption...  blah blah</h3>
+                      </a> -->
+
+              
 
 							</section>
 
@@ -66,6 +71,7 @@
 			</div>
 
 		<!-- Scripts -->
+
 			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
 			<script src="static/js/jquery.poptrox.min.js"></script>
 			<script src="static/js/skel.min.js"></script>
